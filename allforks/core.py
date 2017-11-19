@@ -1,5 +1,8 @@
+import logging
 import math
 from . import github, cache
+
+_log = logging.getLogger(__name__)
 
 
 def fetch(full_name, repos=None):
@@ -75,6 +78,7 @@ def strip_urls(d):
 
 
 def get_forks(full_name):
+    _log.debug("get_forks(%r)", full_name)
     key = ('allforks/' + full_name, {})
     try:
         data = cache.get(key=key)

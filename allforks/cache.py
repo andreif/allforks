@@ -1,8 +1,11 @@
 import json
+import logging
 import os
 import urllib.parse
 import requests
 from . import conf
+
+_log = logging.getLogger(__name__)
 
 
 class DoesNotExist(Exception):

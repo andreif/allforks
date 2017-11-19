@@ -1,9 +1,13 @@
 import getpass
+import logging
 import flask
 import allforks
 
 DEBUG = getpass.getuser() in ['andrei']
 app = flask.Flask(__name__)
+
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s  %(levelname)s  %(name)s  %(message)s')
 
 
 @app.route('/<owner>/<repo>')
