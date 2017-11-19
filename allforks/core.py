@@ -114,11 +114,11 @@ def format_forks(data, name=None, known_heads=None, level=0):
                 new_heads.append((branch, commits))
     if new_heads:
         result.append('')
-        result.append(ind + '📓 ' + name)
+        result.append(ind + '📓  ' + name)
         for h, cc in new_heads:
-            result.append(ind + ind1 + '↳ ' + h)
+            result.append(ind + ind1 + ' ↳ ' + h)
             for dt, nm, m in cc:
-                result.append(ind + ind1 * 2 + '⊶ ' + dt +
+                result.append(ind + ind1 * 2 + ' ⊶ ' + dt +
                               '  ' + nm + '  ' + m.split('\n')[0])
     if d['forks']:
         for f in d['fork_names']:

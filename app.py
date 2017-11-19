@@ -11,7 +11,7 @@ def index(owner, repo):
     # full_name = flask.request.args.get('repo')
     data = allforks.get_forks(full_name='%s/%s' % (owner, repo))
     lines = allforks.format_forks(data)
-    return flask.Response('\n'.join(lines), mimetype='text/plain')
+    return flask.Response('\n'.join(lines) + '\n\n', mimetype='text/plain')
 
 
 if __name__ == '__main__':
