@@ -91,7 +91,8 @@ def get_forks(full_name):
 def format_forks(data, name=None, known_heads=None, level=0):
     result = []
     if name is None:
-        name = next(iter(data.values()))['source']
+        some_fork = next(iter(data.values()))
+        name = some_fork.get('source') or some_fork['full_name']
     if known_heads is None:
         known_heads = []
     ind1 = ' ' * 3
