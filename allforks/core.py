@@ -99,7 +99,7 @@ def format_forks(data, name=None, known_heads=None, level=0):
     ind = ind1 * level
     d = data.get(name.lower())
     if not d:
-        return
+        return result
     new_heads = []
     for h in d['heads']:
         if h['ref'].endswith('/gh-pages'):
